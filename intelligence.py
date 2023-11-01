@@ -1,4 +1,5 @@
 # pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,too-few-public-methods,invalid-name
+import random
 from random import randint, randrange
 
 from components import Position, Velocity
@@ -10,5 +11,6 @@ class Wander:
         vel.y = randint(-1, 1)
 
         fire_bullet = randrange(0, 100)
-        if fire_bullet <= 25:
-            entities.bullet.create('UP', pos.x, pos.y)
+        if fire_bullet <= 20:
+            direction = random.choices(['UP', 'DOWN', 'LEFT', 'RIGHT'])
+            entities.bullet.create(direction, pos.x, pos.y)

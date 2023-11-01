@@ -48,8 +48,7 @@ class RenderSystem(esper.Processor):
 
             # Move to the position of the tank and draw it
             self.screen.print_at(f'T[{ent}]', pos.x, pos.y,
-                                 bg=Screen.COLOUR_WHITE)
-
+                                 bg=Screen.COLOUR_MAGENTA)
             # Increment the index of the object so that the debug output can be placed correctly
             index += 1
 
@@ -57,4 +56,4 @@ class RenderSystem(esper.Processor):
         # Draw the bullets
         for ent, (_proj_id, pos) in esper.get_components(Projectile, Position):
             # Move to the position of the tank and draw it
-            self.screen.print_at(f"B[{ent}]", pos.x, pos.y, bg=Screen.COLOUR_WHITE)
+            self.screen.print_at(f"B[{ent}]", pos.x, pos.y, bg=Screen.COLOUR_CYAN)
