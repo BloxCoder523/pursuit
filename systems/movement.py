@@ -29,3 +29,4 @@ class MovementSystem(esper.Processor):
 
             if 0 > new_x > self.max_board_size or 0 > new_y > self.max_board_size:
                 esper.delete_entity(ent)
+     

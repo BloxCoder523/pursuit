@@ -12,5 +12,5 @@ class Wander:
 
         fire_bullet = randrange(0, 100)
         if fire_bullet <= 20:
-            direction = random.choices(['UP', 'DOWN', 'LEFT', 'RIGHT'])
-            entities.bullet.create(direction, pos.x, pos.y)
+            direction = random.choices(['UP', 'DOWN', 'LEFT', 'RIGHT', 'UP RIGHT', 'DOWN RIGHT', 'UP LEFT', 'UP RIGHT'])
+            entities.bullet.create(direction[0], pos.x, pos.y)

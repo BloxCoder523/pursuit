@@ -16,8 +16,18 @@ def create(direction, pos_x, pos_y) -> int:
         vel_y = -2.0
     elif direction == 'LEFT':
         vel_x = -2.0
-    elif direction == 'RIGHT':
+    elif direction == 'UP RIGHT':
+        vel_x = 2.0 
         vel_y = 2.0
+    elif direction == 'UP LEFT':
+        vel_x = -2.0
+        vel_y = 2.0
+    elif direction == 'DOWN RIGHT':
+        vel_x = 2.0
+        vel_y = -2.0
+    elif direction == 'DOWN LEFT':
+        vel_x = -2.0
+        vel_y = -2.0
 
     esper.add_component(bullet, Velocity(x=vel_x, y=vel_y))
     esper.add_component(bullet, Position(x=pos_x, y=pos_y))
@@ -25,3 +35,5 @@ def create(direction, pos_x, pos_y) -> int:
     esper.add_component(bullet, Projectile())
 
     return bullet
+
+
