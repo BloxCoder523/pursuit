@@ -58,12 +58,12 @@ def game_update(message):
     game_update_message = json.loads(message['data'])
 
     # So that it is easier to see your actions, this will only show your tank. Comment this out to see all tanks.
-    tank = next((t for t in game_update_message['tanks'] if t['name'] == my_tank), None)
-    if tank:
-        print(f'game_update: {tank}')
+    # tank = next((t for t in game_update_message['tanks'] if t['name'] == my_tank), None)
+    # if tank:
+    #     print(f'game_update: {tank}')
 
     # Uncomment the following line to see all tanks and game world information.
-    # print(f'game_update: {message}')
+    print(f'game_update: {message}')
 
     # This is where you will add your code to control your tank.
 
@@ -72,19 +72,8 @@ def game_update(message):
     #   tank_action_change_speed
     #   tank_action_shoot
 
-    # Example code to move your tank randomly.
-    action = random.choices(
-        population=['MOVE', 'SHOOT', 'NONE'],
-        weights=[0.8, 0.15, 0.05],
-    )
-    if action[0] == 'MOVE':
-        print('action: move')
-        move()
-    elif action[0] == 'SHOOT':
-        print('action: shoot')
-        sio.emit('tank_action_shoot')
-    else:   # action == 'NONE'
-        print('action: none')
+
+    # print(f"game_update: {game_update_message}")
 
 ###############################################################################
 # Action Methods
